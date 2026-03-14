@@ -1,0 +1,33 @@
+# ── Scheduling ───────────────────────────────────────────
+APScheduler==3.10.4
+
+# ── Database ─────────────────────────────────────────────
+SQLAlchemy==2.0.30
+psycopg2-binary==2.9.9
+
+# ── Cache ────────────────────────────────────────────────
+redis==5.0.4
+
+# ── Config & Env ─────────────────────────────────────────
+python-dotenv==1.0.1
+pydantic-settings==2.2.1
+
+# ── Logging ──────────────────────────────────────────────
+loguru==0.7.2
+
+# ── Utilities ────────────────────────────────────────────
+tenacity==8.2.3
+
+# --- Optional: For development and testing ---
+pandas
+pytest
+vnai
+beautifulsoup4
+aiohttp
+nest-asyncio
+pyarrow
+openpyxl
+tqdm
+panel
+pyecharts
+pta-reload

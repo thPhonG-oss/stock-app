@@ -1,0 +1,80 @@
+# ─────────────────────────────────────────────────────────────────
+#  Stock App — Docker Compose
+#  Services: PostgreSQL 16, Redis 7, Data Pipeline
+# ─────────────────────────────────────────────────────────────────
+
+services:
+  # ── PostgreSQL ─────────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: stockapp-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: stockapp
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C"
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d stockapp"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - stockapp-net
+
+  # ── Redis ──────────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: stockapp-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    networks:
+      - stockapp-net
+
+  # ── Data Pipeline ───────────────────────────────────────────────
+  data-pipeline:
+    build:
+      context: ./data-pipeline
+      dockerfile: Dockerfile
+    container_name: stockapp-pipeline
+    restart: unless-stopped
+    env_file:
+      - ./data-pipeline/.env.docker
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - pipeline-logs:/app/logs
+    networks:
+      - stockapp-net
+
+# ── Named volumes ──────────────────────────────────────────────────
+volumes:
+  pgdata:
+    driver: local
+  redisdata:
+    driver: local
+  pipeline-logs:
+    driver: local
+
+# ── Network ────────────────────────────────────────────────────────
+networks:
+  stockapp-net:
+    driver: bridge

@@ -1,0 +1,6 @@
+.env
+venv
+.env.docker
+__pycache__
+.claude
+.vscode
