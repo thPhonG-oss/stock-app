@@ -6,7 +6,7 @@ Hỗ trợ incremental: chỉ fetch từ ngày cuối cùng đã có trong DB.
 """
 
 import time
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 
 from loguru import logger
 from config.settings import settings
@@ -32,7 +32,7 @@ def job_fetch_ohlcv_daily():
     logger.info("═" * 60)
 
     today = date.today()
-    lookback_start = today - timedelta(days=settings.LOOKBACK_YEARS * 365)
+    lookback_start = today - timedelta(days=settings.BOOTSTRAP_LOOKBACK_DAYS)
     batch_size = settings.BATCH_SIZE
 
     # Lấy danh sách symbols
@@ -63,7 +63,8 @@ def job_fetch_ohlcv_daily():
                 # Kiểm tra ngày cuối cùng đã có
                 latest = MarketLoader.get_latest_date(symbol, "1D")
                 if latest:
-                    start_date = str(latest)
+                    # Start from the day AFTER the last known date to avoid re-fetching
+                    start_date = str(datetime.strptime(latest, "%Y-%m-%d").date() + timedelta(days=1))
                 else:
                     start_date = str(lookback_start)
 
