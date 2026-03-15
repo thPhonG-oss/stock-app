@@ -17,13 +17,22 @@ from loaders.base_loader import BaseLoader
 from db.repositories.listing_repo import ListingRepository
 
 
-def job_fetch_ohlcv_daily():
+def job_fetch_ohlcv_daily(
+    start_date: str | None = None,
+    end_date: str | None = None,
+    symbols_filter: list[str] | None = None,
+):
     """
     Job: Lấy OHLCV daily cho tất cả active symbols.
 
     Logic incremental:
     - Kiểm tra ngày mới nhất đã có trong DB → chỉ fetch từ ngày đó + 1
     - Nếu chưa có data → fetch từ lookback_years (mặc định 3 năm)
+
+    Args:
+        start_date: Override ngày bắt đầu (YYYY-MM-DD). Nếu None → dùng incremental logic.
+        end_date: Override ngày kết thúc (YYYY-MM-DD). Nếu None → today.
+        symbols_filter: Chỉ chạy cho các symbols này. Nếu None → tất cả.
 
     Lịch chạy: mỗi ngày 17:30 (sau khi thị trường đóng cửa)
     """
@@ -34,11 +43,18 @@ def job_fetch_ohlcv_daily():
     today = date.today()
     lookback_start = today - timedelta(days=settings.BOOTSTRAP_LOOKBACK_DAYS)
     batch_size = settings.BATCH_SIZE
+    forced_end = end_date or str(today)
 
     # Lấy danh sách symbols
     with BaseLoader.connect() as conn:
         repo = ListingRepository(conn)
         symbols = repo.get_all_symbols()
+
+    if symbols_filter:
+        symbols_filter_upper = [s.upper() for s in symbols_filter]
+        symbols = [s for s in symbols if
+                   (s["symbol"] if isinstance(s, dict) else s).upper() in symbols_filter_upper]
+        logger.info("Filtered to {} symbols: {}", len(symbols), symbols_filter_upper)
 
     if not symbols:
         logger.warning("Không có symbols nào trong DB. Chạy listing sync trước!")
@@ -61,17 +77,19 @@ def job_fetch_ohlcv_daily():
 
             try:
                 # Kiểm tra ngày cuối cùng đã có
-                latest = MarketLoader.get_latest_date(symbol, "1D")
-                if latest:
-                    # Start from the day AFTER the last known date to avoid re-fetching
-                    start_date = str(datetime.strptime(latest, "%Y-%m-%d").date() + timedelta(days=1))
+                if start_date:
+                    fetch_start = start_date
                 else:
-                    start_date = str(lookback_start)
+                    latest = MarketLoader.get_latest_date(symbol, "1D")
+                    if latest:
+                        fetch_start = str(datetime.strptime(latest, "%Y-%m-%d").date() + timedelta(days=1))
+                    else:
+                        fetch_start = str(lookback_start)
 
-                end_date = str(today)
+                fetch_end = forced_end
 
                 # Extract
-                df = MarketExtractor.extract_ohlcv_daily(symbol, start_date, end_date)
+                df = MarketExtractor.extract_ohlcv_daily(symbol, fetch_start, fetch_end)
                 if df is None or df.empty:
                     continue
 

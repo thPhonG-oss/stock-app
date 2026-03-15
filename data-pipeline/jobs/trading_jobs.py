@@ -16,25 +16,39 @@ from loaders.base_loader import BaseLoader
 from db.repositories.listing_repo import ListingRepository
 
 
-def job_fetch_foreign_flow():
+def job_fetch_foreign_flow(
+    start_date: str | None = None,
+    end_date: str | None = None,
+    symbols_filter: list[str] | None = None,
+):
     """
     Job: Lấy foreign flow data cho tất cả active symbols.
 
-    Lấy 30 ngày gần nhất (hoặc từ lookback period).
-    Lịch chạy: mỗi ngày 17:30 (sau khi thị trường đóng cửa)
+    Args:
+        start_date: Override ngày bắt đầu (YYYY-MM-DD). Nếu None → 30 ngày trước.
+        end_date: Override ngày kết thúc (YYYY-MM-DD). Nếu None → today.
+        symbols_filter: Chỉ chạy cho các symbols này. Nếu None → tất cả.
+
+    Lịch chạy: mỗi ngày 17:45 (sau khi thị trường đóng cửa)
     """
     logger.info("═" * 60)
     logger.info("▶ Bắt đầu job: Fetch Foreign Flow")
     logger.info("═" * 60)
 
     today = date.today()
-    start_date = str(today - timedelta(days=30))
-    end_date = str(today)
+    fetch_start = start_date or str(today - timedelta(days=30))
+    fetch_end = end_date or str(today)
 
     # Lấy danh sách symbols
     with BaseLoader.connect() as conn:
         repo = ListingRepository(conn)
         symbols = repo.get_all_symbols()
+
+    if symbols_filter:
+        symbols_filter_upper = [s.upper() for s in symbols_filter]
+        symbols = [s for s in symbols if
+                   (s["symbol"] if isinstance(s, dict) else s).upper() in symbols_filter_upper]
+        logger.info("Filtered to {} symbols: {}", len(symbols), symbols_filter_upper)
 
     if not symbols:
         logger.warning("Không có symbols nào. Chạy listing sync trước!")
@@ -54,7 +68,7 @@ def job_fetch_foreign_flow():
 
             try:
                 # Extract
-                df = TradingExtractor.extract_foreign_trade(symbol, start_date, end_date)
+                df = TradingExtractor.extract_foreign_trade(symbol, fetch_start, fetch_end)
                 if df is None or df.empty:
                     continue
 

@@ -1,0 +1,210 @@
+2026-03-14 17:17:24 | INFO     | scheduler:main:127 - Data Pipeline starting up...
+2026-03-14 17:17:24 | INFO     | scheduler:main:128 - VNSTOCK_SOURCE: VCI
+2026-03-14 17:17:24 | INFO     | scheduler:main:129 - Database: localhost
+2026-03-14 17:17:24 | INFO     | scheduler:bootstrap:95 - ════════════════════════════════════════════════════════════
+2026-03-14 17:17:24 | INFO     | scheduler:bootstrap:96 -   STOCK DATA PIPELINE — BOOTSTRAP
+2026-03-14 17:17:24 | INFO     | scheduler:bootstrap:97 - ════════════════════════════════════════════════════════════
+2026-03-14 17:17:24 | INFO     | scheduler:bootstrap:100 - [ BOOTSTRAP ] Initializing database schema...
+2026-03-14 17:17:24 | INFO     | db.engine:get_engine:23 - Database engine created → localhost:5432/stockapp
+2026-03-14 17:17:28 | INFO     | db.schema_init:init_schema:32 - Initialising database schema from C:\Users\PHONG\Desktop\stock-app\data-pipeline\db\scripts\schema.sql
+2026-03-14 17:17:32 | ERROR    | scheduler:bootstrap:105 - [ BOOTSTRAP ] Schema init failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-03-14 17:19:51 | INFO     | scheduler:main:127 - Data Pipeline starting up...
+2026-03-14 17:19:51 | INFO     | scheduler:main:128 - VNSTOCK_SOURCE: VCI
+2026-03-14 17:19:51 | INFO     | scheduler:main:129 - Database: localhost
+2026-03-14 17:19:51 | INFO     | scheduler:bootstrap:95 - ════════════════════════════════════════════════════════════
+2026-03-14 17:19:51 | INFO     | scheduler:bootstrap:96 -   STOCK DATA PIPELINE — BOOTSTRAP
+2026-03-14 17:19:51 | INFO     | scheduler:bootstrap:97 - ════════════════════════════════════════════════════════════
+2026-03-14 17:19:51 | INFO     | scheduler:bootstrap:100 - [ BOOTSTRAP ] Initializing database schema...
+2026-03-14 17:19:51 | INFO     | db.engine:get_engine:23 - Database engine created → localhost:5432/stockapp
+2026-03-14 17:19:51 | INFO     | db.schema_init:init_schema:32 - Initialising database schema from C:\Users\PHONG\Desktop\stock-app\data-pipeline\db\scripts\schema.sql
+2026-03-14 17:19:51 | ERROR    | scheduler:bootstrap:105 - [ BOOTSTRAP ] Schema init failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "stockapp" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-03-14 17:21:41 | INFO     | scheduler:main:127 - Data Pipeline starting up...
+2026-03-14 17:21:41 | INFO     | scheduler:main:128 - VNSTOCK_SOURCE: VCI
+2026-03-14 17:21:41 | INFO     | scheduler:main:129 - Database: localhost
+2026-03-14 17:21:41 | INFO     | scheduler:bootstrap:95 - ════════════════════════════════════════════════════════════
+2026-03-14 17:21:41 | INFO     | scheduler:bootstrap:96 -   STOCK DATA PIPELINE — BOOTSTRAP
+2026-03-14 17:21:41 | INFO     | scheduler:bootstrap:97 - ════════════════════════════════════════════════════════════
+2026-03-14 17:21:41 | INFO     | scheduler:bootstrap:100 - [ BOOTSTRAP ] Initializing database schema...
+2026-03-14 17:21:41 | INFO     | db.engine:get_engine:23 - Database engine created → localhost:5432/stockapp
+2026-03-14 17:21:41 | INFO     | db.schema_init:init_schema:32 - Initialising database schema from C:\Users\PHONG\Desktop\stock-app\data-pipeline\db\scripts\schema.sql
+2026-03-14 17:21:41 | ERROR    | scheduler:bootstrap:105 - [ BOOTSTRAP ] Schema init failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "stockapp" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-03-14 17:22:28 | INFO     | scheduler:main:127 - Data Pipeline starting up...
+2026-03-14 17:22:28 | INFO     | scheduler:main:128 - VNSTOCK_SOURCE: VCI
+2026-03-14 17:22:28 | INFO     | scheduler:main:129 - Database: localhost
+2026-03-14 17:22:28 | INFO     | scheduler:bootstrap:95 - ════════════════════════════════════════════════════════════
+2026-03-14 17:22:28 | INFO     | scheduler:bootstrap:96 -   STOCK DATA PIPELINE — BOOTSTRAP
+2026-03-14 17:22:28 | INFO     | scheduler:bootstrap:97 - ════════════════════════════════════════════════════════════
+2026-03-14 17:22:28 | INFO     | scheduler:bootstrap:100 - [ BOOTSTRAP ] Initializing database schema...
+2026-03-14 17:22:28 | INFO     | db.engine:get_engine:23 - Database engine created → localhost:5432/stockapp
+2026-03-14 17:22:28 | INFO     | db.schema_init:init_schema:32 - Initialising database schema from C:\Users\PHONG\Desktop\stock-app\data-pipeline\db\scripts\schema.sql
+2026-03-14 17:22:30 | SUCCESS  | db.schema_init:init_schema:39 - Schema initialised successfully.
+2026-03-14 17:22:30 | SUCCESS  | scheduler:bootstrap:103 - [ BOOTSTRAP ] Schema initialized successfully
+2026-03-14 17:22:30 | INFO     | scheduler:bootstrap:109 - [ BOOTSTRAP ] Running initial listing sync...
+2026-03-14 17:22:30 | INFO     | jobs.listing_jobs:job_sync_listing:21 - ════════════════════════════════════════════════════════════
+2026-03-14 17:22:30 | INFO     | jobs.listing_jobs:job_sync_listing:22 - ▶ Bắt đầu job: Đồng bộ Listing
+2026-03-14 17:22:30 | INFO     | jobs.listing_jobs:job_sync_listing:23 - ════════════════════════════════════════════════════════════
+2026-03-14 17:22:30 | INFO     | jobs.listing_jobs:job_sync_listing:30 - [ 1/2 ] Extracting all symbols...
+2026-03-14 17:22:30 | INFO     | extractors.listing_extractor:extract_all_symbols:22 - Extracting: tất cả symbols từ Listing.all_symbols()
+2026-03-14 17:22:30 | ERROR    | jobs.listing_jobs:job_sync_listing:50 - ✗ Job Listing Sync thất bại: No module named 'vnstock'
+2026-03-14 17:22:30 | WARNING  | scheduler:bootstrap:114 - [ BOOTSTRAP ] Listing sync failed: No module named 'vnstock' — continuing anyway
+2026-03-14 17:22:34 | INFO     | scheduler:main:140 - ════════════════════════════════════════════════════════════
+2026-03-14 17:22:34 | INFO     | scheduler:main:141 -   SCHEDULER STARTED — 5 jobs registered
+2026-03-14 17:22:34 | INFO     | scheduler:main:142 - ════════════════════════════════════════════════════════════
+2026-03-14 17:22:34 | INFO     | scheduler:main:144 -   📋 refresh_symbol_listing → cron[day_of_week='mon', hour='7', minute='0']
+2026-03-14 17:22:34 | INFO     | scheduler:main:144 -   📋 fetch_ohlcv_daily_all → cron[day_of_week='mon-fri', hour='17', minute='30']
+2026-03-14 17:22:34 | INFO     | scheduler:main:144 -   📋 fetch_company_profile_all → cron[day_of_week='mon', hour='8', minute='0']
+2026-03-14 17:22:34 | INFO     | scheduler:main:144 -   📋 fetch_financial_statements_all → cron[day='1', hour='9', minute='0']
+2026-03-14 17:22:34 | INFO     | scheduler:main:144 -   📋 fetch_foreign_flow_all → cron[day_of_week='mon-fri', hour='17', minute='45']
+2026-03-14 17:23:08 | INFO     | scheduler:main:127 - Data Pipeline starting up...
+2026-03-14 17:23:08 | INFO     | scheduler:main:128 - VNSTOCK_SOURCE: VCI
+2026-03-14 17:23:08 | INFO     | scheduler:main:129 - Database: localhost
+2026-03-14 17:23:08 | INFO     | scheduler:bootstrap:95 - ════════════════════════════════════════════════════════════
+2026-03-14 17:23:08 | INFO     | scheduler:bootstrap:96 -   STOCK DATA PIPELINE — BOOTSTRAP
+2026-03-14 17:23:08 | INFO     | scheduler:bootstrap:97 - ════════════════════════════════════════════════════════════
+2026-03-14 17:23:08 | INFO     | scheduler:bootstrap:100 - [ BOOTSTRAP ] Initializing database schema...
+2026-03-14 17:23:08 | INFO     | db.engine:get_engine:23 - Database engine created → localhost:5432/stockapp
+2026-03-14 17:23:08 | INFO     | db.schema_init:init_schema:29 - Schema already initialised — skipping DDL.
+2026-03-14 17:23:08 | SUCCESS  | scheduler:bootstrap:103 - [ BOOTSTRAP ] Schema initialized successfully
+2026-03-14 17:23:08 | INFO     | scheduler:bootstrap:109 - [ BOOTSTRAP ] Running initial listing sync...
+2026-03-14 17:23:08 | INFO     | jobs.listing_jobs:job_sync_listing:21 - ════════════════════════════════════════════════════════════
+2026-03-14 17:23:08 | INFO     | jobs.listing_jobs:job_sync_listing:22 - ▶ Bắt đầu job: Đồng bộ Listing
+2026-03-14 17:23:08 | INFO     | jobs.listing_jobs:job_sync_listing:23 - ════════════════════════════════════════════════════════════
+2026-03-14 17:23:08 | INFO     | jobs.listing_jobs:job_sync_listing:30 - [ 1/2 ] Extracting all symbols...
+2026-03-14 17:23:08 | INFO     | extractors.listing_extractor:extract_all_symbols:22 - Extracting: tất cả symbols từ Listing.all_symbols()
+2026-03-14 17:23:12 | INFO     | sources.vnstock_source:listing:32 - Khởi tạo Listing client (source=VCI)
+2026-03-14 17:23:18 | INFO     | extractors.listing_extractor:extract_all_symbols:25 - Extracted 1738 symbols
+2026-03-14 17:23:18 | INFO     | jobs.listing_jobs:job_sync_listing:33 - [ 1/2 ] Transforming symbols...
+2026-03-14 17:23:18 | INFO     | transformers.listing_transformer:transform_symbols:71 - Transformed 1738 symbol records
+2026-03-14 17:23:18 | INFO     | jobs.listing_jobs:job_sync_listing:36 - [ 1/2 ] Loading 1738 symbols...
+2026-03-14 17:23:19 | INFO     | loaders.listing_loader:load_symbols:23 - Loaded 1738 symbols vào DB
+2026-03-14 17:23:19 | INFO     | jobs.listing_jobs:job_sync_listing:40 - [ 2/2 ] Extracting ICB industries...
+2026-03-14 17:23:19 | INFO     | extractors.listing_extractor:extract_industries_icb:34 - Extracting: ngành ICB từ Listing.industries_icb()
+2026-03-14 17:23:19 | INFO     | extractors.listing_extractor:extract_industries_icb:37 - Extracted 155 ICB records
+2026-03-14 17:23:19 | INFO     | jobs.listing_jobs:job_sync_listing:43 - [ 2/2 ] Transforming ICB...
+2026-03-14 17:23:19 | INFO     | transformers.listing_transformer:transform_industries_icb:99 - Transformed 155 ICB records
+2026-03-14 17:23:19 | INFO     | jobs.listing_jobs:job_sync_listing:46 - [ 2/2 ] Loading 155 ICB records...
+2026-03-14 17:23:19 | INFO     | loaders.listing_loader:load_icb_industries:34 - Loaded 155 ICB records vào DB
+2026-03-14 17:23:19 | SUCCESS  | jobs.listing_jobs:job_sync_listing:53 - ✓ Listing Sync hoàn tất — 1738 symbols, 155 ICB records
+2026-03-14 17:23:19 | SUCCESS  | scheduler:bootstrap:112 - [ BOOTSTRAP ] Listing sync completed
+2026-03-14 17:23:19 | INFO     | scheduler:main:140 - ════════════════════════════════════════════════════════════
+2026-03-14 17:23:19 | INFO     | scheduler:main:141 -   SCHEDULER STARTED — 5 jobs registered
+2026-03-14 17:23:19 | INFO     | scheduler:main:142 - ════════════════════════════════════════════════════════════
+2026-03-14 17:23:19 | INFO     | scheduler:main:144 -   📋 refresh_symbol_listing → cron[day_of_week='mon', hour='7', minute='0']
+2026-03-14 17:23:19 | INFO     | scheduler:main:144 -   📋 fetch_ohlcv_daily_all → cron[day_of_week='mon-fri', hour='17', minute='30']
+2026-03-14 17:23:19 | INFO     | scheduler:main:144 -   📋 fetch_company_profile_all → cron[day_of_week='mon', hour='8', minute='0']
+2026-03-14 17:23:19 | INFO     | scheduler:main:144 -   📋 fetch_financial_statements_all → cron[day='1', hour='9', minute='0']
+2026-03-14 17:23:19 | INFO     | scheduler:main:144 -   📋 fetch_foreign_flow_all → cron[day_of_week='mon-fri', hour='17', minute='45']
+2026-03-15 14:19:09 | INFO     | scheduler:main:127 - Data Pipeline starting up...
+2026-03-15 14:19:09 | INFO     | scheduler:main:128 - VNSTOCK_SOURCE: VCI
+2026-03-15 14:19:09 | INFO     | scheduler:main:129 - Database: localhost
+2026-03-15 14:19:09 | INFO     | scheduler:bootstrap:95 - ════════════════════════════════════════════════════════════
+2026-03-15 14:19:09 | INFO     | scheduler:bootstrap:96 -   STOCK DATA PIPELINE — BOOTSTRAP
+2026-03-15 14:19:09 | INFO     | scheduler:bootstrap:97 - ════════════════════════════════════════════════════════════
+2026-03-15 14:19:09 | INFO     | scheduler:bootstrap:100 - [ BOOTSTRAP ] Initializing database schema...
+2026-03-15 14:19:09 | INFO     | db.engine:get_engine:23 - Database engine created → localhost:5432/stockapp
+2026-03-15 14:19:13 | INFO     | db.schema_init:init_schema:32 - Initialising database schema from C:\Users\PHONG\Desktop\stock-app\data-pipeline\db\scripts\schema.sql
+2026-03-15 14:19:17 | ERROR    | scheduler:bootstrap:105 - [ BOOTSTRAP ] Schema init failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-03-15 14:20:02 | INFO     | scheduler:main:127 - Data Pipeline starting up...
+2026-03-15 14:20:02 | INFO     | scheduler:main:128 - VNSTOCK_SOURCE: VCI
+2026-03-15 14:20:02 | INFO     | scheduler:main:129 - Database: localhost
+2026-03-15 14:20:02 | INFO     | scheduler:bootstrap:95 - ════════════════════════════════════════════════════════════
+2026-03-15 14:20:02 | INFO     | scheduler:bootstrap:96 -   STOCK DATA PIPELINE — BOOTSTRAP
+2026-03-15 14:20:02 | INFO     | scheduler:bootstrap:97 - ════════════════════════════════════════════════════════════
+2026-03-15 14:20:02 | INFO     | scheduler:bootstrap:100 - [ BOOTSTRAP ] Initializing database schema...
+2026-03-15 14:20:02 | INFO     | db.engine:get_engine:23 - Database engine created → localhost:5432/stockapp
+2026-03-15 14:20:02 | INFO     | db.schema_init:init_schema:29 - Schema already initialised — skipping DDL.
+2026-03-15 14:20:02 | SUCCESS  | scheduler:bootstrap:103 - [ BOOTSTRAP ] Schema initialized successfully
+2026-03-15 14:20:02 | INFO     | scheduler:bootstrap:109 - [ BOOTSTRAP ] Running initial listing sync...
+2026-03-15 14:20:02 | INFO     | jobs.listing_jobs:job_sync_listing:21 - ════════════════════════════════════════════════════════════
+2026-03-15 14:20:02 | INFO     | jobs.listing_jobs:job_sync_listing:22 - ▶ Bắt đầu job: Đồng bộ Listing
+2026-03-15 14:20:02 | INFO     | jobs.listing_jobs:job_sync_listing:23 - ════════════════════════════════════════════════════════════
+2026-03-15 14:20:02 | INFO     | jobs.listing_jobs:job_sync_listing:30 - [ 1/2 ] Extracting all symbols...
+2026-03-15 14:20:02 | INFO     | extractors.listing_extractor:extract_all_symbols:22 - Extracting: tất cả symbols từ Listing.all_symbols()
+2026-03-15 14:20:02 | ERROR    | jobs.listing_jobs:job_sync_listing:50 - ✗ Job Listing Sync thất bại: No module named 'vnstock'
+2026-03-15 14:20:02 | WARNING  | scheduler:bootstrap:114 - [ BOOTSTRAP ] Listing sync failed: No module named 'vnstock' — continuing anyway
+2026-03-15 14:20:09 | INFO     | scheduler:main:140 - ════════════════════════════════════════════════════════════
+2026-03-15 14:20:09 | INFO     | scheduler:main:141 -   SCHEDULER STARTED — 5 jobs registered
+2026-03-15 14:20:09 | INFO     | scheduler:main:142 - ════════════════════════════════════════════════════════════
+2026-03-15 14:20:09 | INFO     | scheduler:main:144 -   📋 refresh_symbol_listing → cron[day_of_week='mon', hour='7', minute='0']
+2026-03-15 14:20:09 | INFO     | scheduler:main:144 -   📋 fetch_ohlcv_daily_all → cron[day_of_week='mon-fri', hour='17', minute='30']
+2026-03-15 14:20:09 | INFO     | scheduler:main:144 -   📋 fetch_company_profile_all → cron[day_of_week='mon', hour='8', minute='0']
+2026-03-15 14:20:09 | INFO     | scheduler:main:144 -   📋 fetch_financial_statements_all → cron[day='1', hour='9', minute='0']
+2026-03-15 14:20:09 | INFO     | scheduler:main:144 -   📋 fetch_foreign_flow_all → cron[day_of_week='mon-fri', hour='17', minute='45']
+2026-03-15 14:20:40 | INFO     | scheduler:main:127 - Data Pipeline starting up...
+2026-03-15 14:20:40 | INFO     | scheduler:main:128 - VNSTOCK_SOURCE: VCI
+2026-03-15 14:20:40 | INFO     | scheduler:main:129 - Database: localhost
+2026-03-15 14:20:40 | INFO     | scheduler:bootstrap:95 - ════════════════════════════════════════════════════════════
+2026-03-15 14:20:40 | INFO     | scheduler:bootstrap:96 -   STOCK DATA PIPELINE — BOOTSTRAP
+2026-03-15 14:20:40 | INFO     | scheduler:bootstrap:97 - ════════════════════════════════════════════════════════════
+2026-03-15 14:20:40 | INFO     | scheduler:bootstrap:100 - [ BOOTSTRAP ] Initializing database schema...
+2026-03-15 14:20:40 | INFO     | db.engine:get_engine:23 - Database engine created → localhost:5432/stockapp
+2026-03-15 14:20:40 | INFO     | db.schema_init:init_schema:29 - Schema already initialised — skipping DDL.
+2026-03-15 14:20:40 | SUCCESS  | scheduler:bootstrap:103 - [ BOOTSTRAP ] Schema initialized successfully
+2026-03-15 14:20:40 | INFO     | scheduler:bootstrap:109 - [ BOOTSTRAP ] Running initial listing sync...
+2026-03-15 14:20:40 | INFO     | jobs.listing_jobs:job_sync_listing:21 - ════════════════════════════════════════════════════════════
+2026-03-15 14:20:40 | INFO     | jobs.listing_jobs:job_sync_listing:22 - ▶ Bắt đầu job: Đồng bộ Listing
+2026-03-15 14:20:40 | INFO     | jobs.listing_jobs:job_sync_listing:23 - ════════════════════════════════════════════════════════════
+2026-03-15 14:20:40 | INFO     | jobs.listing_jobs:job_sync_listing:30 - [ 1/2 ] Extracting all symbols...
+2026-03-15 14:20:40 | INFO     | extractors.listing_extractor:extract_all_symbols:22 - Extracting: tất cả symbols từ Listing.all_symbols()
+2026-03-15 14:20:49 | INFO     | sources.vnstock_source:listing:32 - Khởi tạo Listing client (source=VCI)
+2026-03-15 14:20:58 | INFO     | extractors.listing_extractor:extract_all_symbols:25 - Extracted 1738 symbols
+2026-03-15 14:20:58 | INFO     | jobs.listing_jobs:job_sync_listing:33 - [ 1/2 ] Transforming symbols...
+2026-03-15 14:20:58 | INFO     | transformers.listing_transformer:transform_symbols:71 - Transformed 1738 symbol records
+2026-03-15 14:20:58 | INFO     | jobs.listing_jobs:job_sync_listing:36 - [ 1/2 ] Loading 1738 symbols...
+2026-03-15 14:21:02 | INFO     | loaders.listing_loader:load_symbols:23 - Loaded 1738 symbols vào DB
+2026-03-15 14:21:02 | INFO     | jobs.listing_jobs:job_sync_listing:40 - [ 2/2 ] Extracting ICB industries...
+2026-03-15 14:21:02 | INFO     | extractors.listing_extractor:extract_industries_icb:34 - Extracting: ngành ICB từ Listing.industries_icb()
+2026-03-15 14:21:03 | INFO     | extractors.listing_extractor:extract_industries_icb:37 - Extracted 155 ICB records
+2026-03-15 14:21:03 | INFO     | jobs.listing_jobs:job_sync_listing:43 - [ 2/2 ] Transforming ICB...
+2026-03-15 14:21:03 | INFO     | transformers.listing_transformer:transform_industries_icb:99 - Transformed 155 ICB records
+2026-03-15 14:21:03 | INFO     | jobs.listing_jobs:job_sync_listing:46 - [ 2/2 ] Loading 155 ICB records...
+2026-03-15 14:21:03 | INFO     | loaders.listing_loader:load_icb_industries:34 - Loaded 155 ICB records vào DB
+2026-03-15 14:21:03 | SUCCESS  | jobs.listing_jobs:job_sync_listing:53 - ✓ Listing Sync hoàn tất — 1738 symbols, 155 ICB records
+2026-03-15 14:21:03 | SUCCESS  | scheduler:bootstrap:112 - [ BOOTSTRAP ] Listing sync completed
+2026-03-15 14:21:03 | INFO     | scheduler:main:140 - ════════════════════════════════════════════════════════════
+2026-03-15 14:21:03 | INFO     | scheduler:main:141 -   SCHEDULER STARTED — 5 jobs registered
+2026-03-15 14:21:03 | INFO     | scheduler:main:142 - ════════════════════════════════════════════════════════════
+2026-03-15 14:21:03 | INFO     | scheduler:main:144 -   📋 refresh_symbol_listing → cron[day_of_week='mon', hour='7', minute='0']
+2026-03-15 14:21:03 | INFO     | scheduler:main:144 -   📋 fetch_ohlcv_daily_all → cron[day_of_week='mon-fri', hour='17', minute='30']
+2026-03-15 14:21:03 | INFO     | scheduler:main:144 -   📋 fetch_company_profile_all → cron[day_of_week='mon', hour='8', minute='0']
+2026-03-15 14:21:03 | INFO     | scheduler:main:144 -   📋 fetch_financial_statements_all → cron[day='1', hour='9', minute='0']
+2026-03-15 14:21:03 | INFO     | scheduler:main:144 -   📋 fetch_foreign_flow_all → cron[day_of_week='mon-fri', hour='17', minute='45']
+2026-03-15 14:37:01 | INFO     | __main__:<module>:217 - Backfill tool | DB: localhost:5432/stockapp
+2026-03-15 14:37:02 | INFO     | __main__:run_ohlcv:40 - Backfill OHLCV | start=2025-01-01 end=2026-03-15 symbols=ALL
+2026-03-15 14:37:02 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:39 - ════════════════════════════════════════════════════════════
+2026-03-15 14:37:02 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:40 - ▶ Bắt đầu job: Fetch OHLCV Daily
+2026-03-15 14:37:02 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:41 - ════════════════════════════════════════════════════════════
+2026-03-15 14:37:02 | INFO     | db.engine:get_engine:23 - Database engine created → localhost:5432/stockapp
+2026-03-15 14:37:02 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:63 - Chuẩn bị fetch OHLCV cho 1738 symbols
+2026-03-15 14:37:02 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:71 - Processing batch 1/35 (50 symbols)
+2026-03-15 14:37:04 | INFO     | sources.vnstock_source:quote:47 - Khởi tạo Quote client (source=VCI)
+2026-03-15 14:37:59 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:71 - Processing batch 2/35 (50 symbols)
+2026-03-15 14:38:54 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:71 - Processing batch 3/35 (50 symbols)
+2026-03-15 14:39:51 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:71 - Processing batch 4/35 (50 symbols)
+2026-03-15 14:40:41 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:71 - Processing batch 5/35 (50 symbols)
+2026-03-15 14:41:30 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:71 - Processing batch 6/35 (50 symbols)
+2026-03-15 14:42:17 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:71 - Processing batch 7/35 (50 symbols)
+2026-03-15 14:43:07 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:71 - Processing batch 8/35 (50 symbols)
+2026-03-15 14:44:04 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:71 - Processing batch 9/35 (50 symbols)
+2026-03-15 14:45:07 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:71 - Processing batch 10/35 (50 symbols)
+2026-03-15 14:46:15 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:71 - Processing batch 11/35 (50 symbols)
+2026-03-15 14:47:12 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:71 - Processing batch 12/35 (50 symbols)
+2026-03-15 14:48:02 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:71 - Processing batch 13/35 (50 symbols)
+2026-03-15 14:48:49 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:71 - Processing batch 14/35 (50 symbols)
+2026-03-15 14:49:41 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:71 - Processing batch 15/35 (50 symbols)
+2026-03-15 14:50:29 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:71 - Processing batch 16/35 (50 symbols)
+2026-03-15 14:51:17 | INFO     | jobs.market_jobs:job_fetch_ohlcv_daily:71 - Processing batch 17/35 (50 symbols)
